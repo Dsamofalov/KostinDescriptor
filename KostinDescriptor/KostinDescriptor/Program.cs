@@ -91,11 +91,39 @@ namespace KostinDescriptor
         }
         public void ReadMemberAdress()
         {
-
+            if (Size > 0)
+            {
+                Console.WriteLine("Введите номер элемента массива");
+                int number;
+                string s = Console.ReadLine();
+                int.TryParse(s, out number);
+                if ((number >= 0)  &&(number<Size))
+                {
+                    Console.WriteLine("Значение = {0}", CustomArray.GetValue(number));
+                }
+                else Console.WriteLine("Неправильный номер");
+            }
+            else Console.WriteLine("Массив не инициализирован. Выберите 2 в меню для инициализации");
         }
         public void WriteMemberAdress()
         {
-
+            if (Size > 0)
+            {
+                Console.WriteLine("Введите номер элемента массива");
+                int number;
+                string s = Console.ReadLine();
+                int.TryParse(s, out number);
+                if ((number >= 0) && (number < Size))
+                {
+                    Console.WriteLine("Введите значение элемента массива");
+                    int val;
+                    string s2 = Console.ReadLine();
+                    int.TryParse(s2, out val);
+                    Console.WriteLine("Записанное значение = {0}", val);
+                }
+                else Console.WriteLine("Неправильный номер элемента");
+            }
+            else Console.WriteLine("Массив не инициализирован. Выберите 2 в меню для инициализации");
         }
     }
         class CheckErrors
@@ -116,8 +144,8 @@ namespace KostinDescriptor
             Console.WriteLine("Выберите действие:");
             Console.WriteLine("Введите 1 для вывода информации о массиве");
             Console.WriteLine("Введите 2 для инициализации массива");
-            Console.WriteLine("Введите 3 для просмотра адреса элемента массива");
-            Console.WriteLine("Введите 4 для ввода адреса элемента массива");
+            Console.WriteLine("Введите 3 для просмотра  элемента массива");
+            Console.WriteLine("Введите 4 для ввода элемента массива");
             Console.WriteLine("Введите 5 для выхода из приложения");
             int key;
             string s = Console.ReadLine();
