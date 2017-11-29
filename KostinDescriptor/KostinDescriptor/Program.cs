@@ -52,12 +52,15 @@ namespace KostinDescriptor
         public int LowBound { get; set; }
         public void GetInfoAboutArray()
         {
+            HighBound = CustomArray.Max();
+            LowBound = CustomArray.Min();
             if (Name==null)
             {
                 Console.WriteLine("Массив не инициализирован. Выберите 2 в меню для инициализации ");
             }
             else
             {
+
                 Console.WriteLine("Название массива: {0}", Name);
                 Console.WriteLine("Размер массива: {0}",Size.ToString());
                 Console.WriteLine("Наибольшее значение массива: {0}", HighBound.ToString());
@@ -119,20 +122,12 @@ namespace KostinDescriptor
                     int val;
                     string s2 = Console.ReadLine();
                     int.TryParse(s2, out val);
+                    CustomArray[number] = val;
                     Console.WriteLine("Записанное значение = {0}", val);
                 }
                 else Console.WriteLine("Неправильный номер элемента");
             }
             else Console.WriteLine("Массив не инициализирован. Выберите 2 в меню для инициализации");
-        }
-    }
-        class CheckErrors
-    {
-        public int NewAdress { get; set; }
-        public ArrayInfo CreateArray = new ArrayInfo();
-        public void Checking()
-        {
-
         }
     }
     class Menu
